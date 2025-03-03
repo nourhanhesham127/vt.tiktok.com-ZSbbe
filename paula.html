@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message for You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+            max-width: 90%;
+        }
+        .modal h2 {
+            margin: 0 0 10px;
+        }
+        .modal button {
+            background: #ff5e62;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .modal button:hover {
+            background: #ff3b47;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -55%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        .gif-container {
+            margin: 10px 0;
+        }
+        .gif-container img {
+            width: 200px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal" id="messageBox">
+        <h2 id="greeting">🎉 Surprise! 🎉</h2>
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/3o7abldj0b3rxrZUxW/giphy.gif" alt="Surprise!">
+        </div>
+        <p id="message">Hey there! DON'T TRUST WOMEN EXCEPT YOUR MUM (ولو ابوك طلقها متصدقهاش هي كمان). 😊</p>
+        <button onclick="closeMessage()">Got it!</button>
+    </div>
+
+    <audio id="sound" src="https://www.myinstants.com/media/sounds/tada-fanfare-a.mp3"></audio>
+
+    <script>
+        window.onload = function() {
+            let params = new URLSearchParams(window.location.search);
+            let name = params.get("name") || "friend";
+            document.getElementById("greeting").innerHTML = `🎉 Surprise, ${DON'T TRUST WOMEN EXCEPT YOUR MUM (ولو ابوك طلقها متصدقهاش هي كمان)}! 🎉`;
+            document.getElementById("messageBox").style.display = "block";
+            document.getElementById("sound").play();
+        };
+
+        function closeMessage() {
+            document.getElementById("messageBox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
